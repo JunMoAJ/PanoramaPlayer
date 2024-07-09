@@ -10,23 +10,23 @@ import "video.js/dist/video-js.css";
 import videojs from "video.js";
 
 const props = withDefaults(defineProps<{
-  id: string;
-  url: string;
-  options: {
-    controls?: boolean;
-    autoplay?: boolean;
-    muted?: boolean;
-    preload?: "auto" | "metadata" | "none";
-    [x: string]: any;
-  };
-  is360?: boolean;
+  id: string,
+  url: string,
+  options?: {
+    controls?: boolean,
+    autoplay?: boolean,
+    muted?: boolean,
+    preload?: "auto" | "metadata" | "none",
+    [x: string]: any,
+  },
+  is360?: boolean,
 }>(), {
-  options: {
+  options: () => ({
     controls: true,
     autoplay: false,
     muted: false,
     preload: "auto"
-  },
+  }),
   is360: false
 });
 
@@ -75,7 +75,7 @@ const animate = () => {
   renderer.render(scene, camera );
 };
 
-const onPointerDown = (event) => {
+const onPointerDown = (event: any) => {
   t.isUserInteracting = true;
 
   t.onPointerDownPointerX = event.clientX;
@@ -85,7 +85,7 @@ const onPointerDown = (event) => {
   t.onPointerDownLat = t.lat;
 };
 
-const onPointerMove = (event) => {
+const onPointerMove = (event: any) => {
   if (t.isUserInteracting === true) {
     // 根据移动的距离计算相机的偏移量。0.1为缩放因子，越小越慢，避免操作过于灵敏。
     t.lon = ( t.onPointerDownPointerX - event.clientX ) * 0.1 + t.onPointerDownLon;

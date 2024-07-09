@@ -1,6 +1,6 @@
 <template>
 	<div class="comp-box">
-		<LmVideo id="zzh" url="/public/video/362.mp4" is360></LmVideo>
+		<LmVideo id="zzh" url="/video/362.mp4" is360></LmVideo>
 	</div>
 </template>
 <script setup lang="ts">

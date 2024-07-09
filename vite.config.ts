@@ -8,5 +8,8 @@ export default defineConfig({
     alias: {
       "three": "/public/libs/three/three.module.js"
     }
+  },
+  build: {
+    outDir: "docs"
   }
 })

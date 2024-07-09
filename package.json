@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --base=/PanoramaPlayer/",
     "build": "vue-tsc --noEmit && vite build --base=/PanoramaPlayer/",
-    "preview": "vite preview"
+    "preview": "vite preview --base=/PanoramaPlayer/"
   },
   "dependencies": {
     "video.js": "8.12.0",
